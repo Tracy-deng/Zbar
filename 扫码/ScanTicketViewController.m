@@ -95,7 +95,10 @@ static const CGFloat kMargin = 30;
     _readView.readerDelegate = self;
     // 关闭闪光灯
     _readView.torchMode = 0;
-
+    
+     _readView.zoom = 0; //设置下摄像头焦距
+    
+    [_readView.session setSessionPreset:AVCaptureSessionPresetHigh];  // 设置摄像捕捉等级最高
     // 将其照相机拍摄视图显示到视图上去
     [self.view addSubview:_readView];
     
